@@ -9,38 +9,49 @@ namespace Workshop.IdentityResolution
     {
         static void Main(string[] args)
         {
+            Setup();
+
             using var db = new ExemploContexto();
-            Setup(db);
             Console.WriteLine("Banco Criado..");
 
-            var departamentos = db.Departamentos.Include(p => p.Funcionarios).AsNoTracking().ToList(); 
+            var consulta = db
+               .Departamentos
+               .Include(p => p.Funcionarios);
+
+            var script = consulta.ToQueryString();
+
+            var departamentos = db
+                .Departamentos
+                .Include(p => p.Funcionarios)
+                .AsNoTrackingWithIdentityResolution()
+                .ToList();
 
             Console.WriteLine("Finalizado..");
         }
 
-        static void Setup(ExemploContexto db)
+        static void Setup()
         {
-            if (db.Database.EnsureCreated())
+            using var db = new ExemploContexto();
+            db.Database.EnsureDeleted();
+            db.Database.EnsureCreated();
+
+            var departamento = new Departamento
             {
-                var departamentos = Enumerable.Range(1, 1)
-                .Select(p => new Departamento
+                Descricao = "Departamento ",
+                Funcionarios = Enumerable.Range(1, 100)
+                .Select(x => new Funcionario
                 {
-                    Descricao = "Departamento " + p,
-                    Funcionarios = Enumerable.Range(1, 100)
-                    .Select(x => new Funcionario
-                    {
-                        Nome = $"Funcionario {p}-{x}"
-                    }).ToList()
-                }).ToList();
+                    Nome = $"Funcionario {x}"
+                }).ToList()
+            };
 
-                db.Departamentos.AddRange(departamentos);
-
-                db.SaveChanges();
-            }
+            db.Departamentos.Add(departamento);
+            db.SaveChanges();
         }
-
-
     }
+
+
+
 
     public class Departamento
     {
@@ -68,4 +79,5 @@ namespace Workshop.IdentityResolution
             => optionsBuilder
                 .UseSqlite("Data Source=identity-resolution.db");
     }
+
 }

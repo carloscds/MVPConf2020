@@ -13,7 +13,11 @@ namespace Workshop.SplitQuery
             Setup(db);
             Console.WriteLine("Banco Criado..");
 
-            var departamentos = db.Departamentos.Include(p => p.Funcionarios).ToList();
+            var departamentos = db.Departamentos.Include(p => p.Funcionarios)
+                .AsSingleQuery();
+
+            var query = departamentos.ToQueryString();
+                 
             foreach (var departamento in departamentos)
             {
                 Console.WriteLine($"Departamento: {departamento.Descricao}");
@@ -75,6 +79,6 @@ namespace Workshop.SplitQuery
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder
-                .UseSqlite("Data Source=split-query.db");
+                .UseSqlite("Data Source=split-query.db", p=>p.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery));
     }
 }

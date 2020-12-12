@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using WorkshopEF.Data;
 
 var connection = "Data Source=teste.db";
 var options = new DbContextOptionsBuilder<Contexto>()
     .UseSqlite(connection)
-    .LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
+    .LogTo(Console.WriteLine,new[] { CoreEventId.ContextInitialized, RelationalEventId.CommandExecuted }, Microsoft.Extensions.Logging.LogLevel.Information);
 
 var db = new Contexto(options.Options);
 SeedData.SetupBD(db);
