@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30803.129
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkshopEF.Logs", "WorkshopEF.Logs\WorkshopEF.Logs.csproj", "{9E7574D1-A1AC-4773-8732-54B198097A97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "0-WorkshopEF.Logs", "WorkshopEF.Logs\0-WorkshopEF.Logs.csproj", "{9E7574D1-A1AC-4773-8732-54B198097A97}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkshopEF.Data", "WorkshopEF.Data\WorkshopEF.Data.csproj", "{F52062AC-24A7-4684-B18A-0F62B50268F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkshopEF.IdentityResolution", "WorkshopEF.IdentityResolution\WorkshopEF.IdentityResolution.csproj", "{79F573AB-29FC-49D5-A461-BD939D68F340}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-WorkshopEF.IdentityResolution", "WorkshopEF.IdentityResolution\2-WorkshopEF.IdentityResolution.csproj", "{79F573AB-29FC-49D5-A461-BD939D68F340}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkshopEF.SplitQuery", "WorkshopEF.SplitQuery\WorkshopEF.SplitQuery.csproj", "{E2F5041F-7A9C-46AE-A25C-F3EA012D3FE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-WorkshopEF.SplitQuery", "WorkshopEF.SplitQuery\3-WorkshopEF.SplitQuery.csproj", "{E2F5041F-7A9C-46AE-A25C-F3EA012D3FE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkshopEF.PropertyBag", "WorkshopEF.PropertyBag\WorkshopEF.PropertyBag.csproj", "{DCE674C6-4759-4FEA-8E48-E76379ABD95A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1-WorkshopEF.PropertyBag", "WorkshopEF.PropertyBag\1-WorkshopEF.PropertyBag.csproj", "{DCE674C6-4759-4FEA-8E48-E76379ABD95A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4-WorkshopEF.ScriptComTransacao", "WorkshopEF.ScriptComTransacao\4-WorkshopEF.ScriptComTransacao.csproj", "{AED65813-0BF8-413B-8930-085E5BE8D6A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5-Workshop.ContadoresDeEventos", "Workshop.ContadoresDeEventos\5-Workshop.ContadoresDeEventos.csproj", "{90929FCE-BB14-45A5-91F9-22F02C11F48F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{DCE674C6-4759-4FEA-8E48-E76379ABD95A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCE674C6-4759-4FEA-8E48-E76379ABD95A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCE674C6-4759-4FEA-8E48-E76379ABD95A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AED65813-0BF8-413B-8930-085E5BE8D6A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AED65813-0BF8-413B-8930-085E5BE8D6A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AED65813-0BF8-413B-8930-085E5BE8D6A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AED65813-0BF8-413B-8930-085E5BE8D6A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90929FCE-BB14-45A5-91F9-22F02C11F48F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90929FCE-BB14-45A5-91F9-22F02C11F48F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90929FCE-BB14-45A5-91F9-22F02C11F48F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90929FCE-BB14-45A5-91F9-22F02C11F48F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
