@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using WorkshopEF.Dominio;
+using WorkshopEF.Data.Dominio;
 
-namespace WorkshopEF.EFConfiguration
+namespace WorkshopEF.Data.EFConfiguration
 {
     public class FornecedorConfiguration : IEntityTypeConfiguration<Fornecedor>
     {

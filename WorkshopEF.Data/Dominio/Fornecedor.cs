@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
 
-namespace WorkshopEF.Dominio
+namespace WorkshopEF.Data.Dominio
 {
     public class Fornecedor
     {

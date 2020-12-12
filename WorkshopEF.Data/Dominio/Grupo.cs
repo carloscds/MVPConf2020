@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using WorkshopEF.Dominio.Abstract;
 
-namespace WorkshopEF.Dominio
+namespace WorkshopEF.Data.Dominio
 {
-    public class Grupo : EntityBase
+    public class Grupo 
     {
+        public int Id { get; set; }
         public string Nome { get; set; }
         public virtual ICollection<Produto> Produto { get; set; }
         public Grupo()

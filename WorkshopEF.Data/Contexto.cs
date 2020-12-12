@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Reflection;
-using WorkshopEF.Dominio;
+using WorkshopEF.Data.Dominio;
 
-namespace WorkshopEF
+namespace WorkshopEF.Data
 {
     public class Contexto : DbContext
     {

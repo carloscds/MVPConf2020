@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using WorkshopEF.Dominio;
+using WorkshopEF.Data.Dominio;
 
-namespace WorkshopEF.EFConfiguration
+namespace WorkshopEF.Data.EFConfiguration
 {
     public class ProdutoConfiguration : IEntityTypeConfiguration<Produto>
     {
@@ -15,7 +15,6 @@ namespace WorkshopEF.EFConfiguration
                 .HasMaxLength(100);
             builder.Property(p => p.Preco)
                 .HasPrecision(18, 2);
-            builder.HasIndex(p => p.Key);
             builder.HasOne(p => p.Grupo)
                 .WithMany(p => p.Produto)
                 .HasForeignKey(p => p.GrupoId);
